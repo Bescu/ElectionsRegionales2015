@@ -380,7 +380,7 @@
 		
 		// Fonction déclenchée quand on passe sur une feature :
 		
-		function highlightFeature(e) {
+		function highlightFeature(e) {	
 			
 			// legende Si on n'est pas en analyse par parti :
 			
@@ -464,7 +464,7 @@
 		// Fonction déclenchée quand on quitte une feature :
 		
 		function resetHighlight() {
-			
+		
 			// Si on n'est pas en analyse par parti :
 			if (indAnalyse==0){
 				zoneElec.eachLayer(function(layer){
@@ -532,7 +532,9 @@
 		
 		// fond de plan (ici MapQuest)
 		
-		L.tileLayer('http://otile1.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png').addTo(map);
+		L.tileLayer('http://otile1.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png', {
+			attribution: "Rendu : &copy; <a href='http://www.mapquest.com/'>MapQuest</a> | Données cartographiques : &copy; Les Contributeurs d'<a href='http://osm.org/copyright'>OpenStreetMap</a> | Données élections : <a href='https://www.data.gouv.fr/fr/datasets/elections-regionales-2010-resultats-572148/'>Ministère de l'Intérieur</a>"
+		}).addTo(map);
 		
 		// Style des polygones
 		
