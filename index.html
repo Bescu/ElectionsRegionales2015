@@ -159,7 +159,7 @@
 		
 		function legendeGenerale() {
 			html="<div id='coeurLegende'>";
-						if(document.getElementById('tour1').checked){
+			if(document.getElementById('tour1').checked){
 				//On calcule les totaux, on les range dans un array puis on les tri
 				totalIns_1tr=0;
 				zoneElec.eachLayer(function(layer){
@@ -386,7 +386,7 @@
 			
 			if (indAnalyse==0){
 				if(document.getElementById('tour1').checked){
-					html= "<p class='titreResult'><b>Résultats du 1<SUP>er</SUP> tour dans la commune de :</b></p><p id='communeNom'>" + e.target.feature.properties.COMMUNE + "</p></b>";		
+					html= "<p class='titreResult'><b>Résultats du 1<SUP>er</SUP> tour dans la commune de :</b></p><p id='communeNom'>" + e.target.feature.properties.COMMUNE + "</p>";		
 					
 					//On range les résultats dans un array puis on les tri
 					tour1.sort(function(a,b) {
@@ -407,7 +407,7 @@
 					html+="<br>Taux de participation : <p class='pourcentage'>"+ participation + " % </p> <p class='voix'>(" +totalExp+" voix/" +e.target.feature.properties.ins_1tr+" inscrits)</p>";
 				
 				}else if(document.getElementById('tour2').checked){
-					html= "<p class='titreResult'><b>Résultats du 2<SUP>ème</SUP> tour dans la commune de :</b></p><p id='communeNom'>" + e.target.feature.properties.COMMUNE + "</p></b>";		
+					html= "<p class='titreResult'><b>Résultats du 2<SUP>ème</SUP> tour dans la commune de :</b></p><p id='communeNom'>" + e.target.feature.properties.COMMUNE + "</p>";		
 					
 					//On range les résultats dans un array puis on les tri
 					tour2.sort(function(a,b) {
