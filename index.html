@@ -1,10 +1,10 @@
 ﻿<!DOCTYPE html>
 <html>
 	<head>
-		<title>Résultat Élections Régionales 2010</title>
+		<title>Résultat Élections Régionales 2015</title>
 		<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 		<script src="http://d3js.org/topojson.v1.min.js"></script>
-		<script src="elecregion2010_simp.json"></script>
+		<script src="NPDCP1tr.topojson"></script>
 		<script type="text/javascript" src="geostats.min.js"></script>
 		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 		<style>
@@ -17,6 +17,11 @@
             height: 100%;
             width: 100%;
         }
+		
+		#tours {
+			visibility: hidden;
+		}
+		
 		.legende {
 			position: absolute;
 			right: 0;
@@ -128,8 +133,8 @@
 		<div id="map"></div>
 		<div class="legende" id="legende"></div>
 		<div class="tour">
-			<h1>Résultat Élections Régionales 2010</h1><br>
-			<form><input type='radio' name='tours' value='tour1' id='tour1' checked="checked">Tour 1 <input type='radio' name='tours' value='tour2' id='tour2'>Tour 2</form>
+			<h1>Résultat Élections Régionales 2015</h1><br>
+			<form id="tours"><input type='radio' name='tours' value='tour1' id='tour1' checked="checked">Tour 1 <input type='radio' name='tours' value='tour2' id='tour2'>Tour 2</form>
 		</div>
 		
 		<script type="text/javascript">		
@@ -139,19 +144,17 @@
 			// [["nom du parti","nom du champs des resultats de ce parti (en nombre de voix)","couleur du parti(en rgb)"],[...]]
 			// Le geojson doit comporter un champs ins_1tr et ins_2tr avec le nombre d'inscrits sur les listes par bureau
 
-		var tour1=[["Lutte Ouvrière","LO_1tr",'rgb(176,14,4)'],
-				["Nouveau Parti Anti-capitaliste","NPA_1tr",'rgb(238,21,5)'],
-				["L'Humain d'Abord","HDA_1tr",'rgb(126,8,0)'],
-				["Résister, Rassembler","RR_1tr",'rgb(255,125,192)'],
-				["Europe Écologie","EELV_1tr",'rgb(51,160,44)'],
-				["Jeune Agriculteurs","JA_1tr",'rgb(28,87,23)'],
-				["Votez Juste","VJ_1tr",'rgb(249,191,0)'],
-				["Ma Vie, Ma Région, Mon Avenir","VRA_1tr",'rgb(81,192,249)'],
-				["La Liste Ch'ti","CHTI_1tr",'rgb(28,87,23)'],
-				["Front National","FN_1tr",'rgb(2,14,64)']];
+		var tour1=[["LR-UDI-MoDem (Bertand)","LR_1tr",'rgb(0,0,255)'],
+				["DLF (Tanguy)","DLF_1tr",'rgb(98,39,110)'],
+				["UPR (Mascaro)","UPR_1tr",'rgb(160,216,240)'],
+				["FN (Le Pen)","FN_1tr",'rgb(0,0,50)'],
+				["Nous citoyens (Blondel)","NC_1tr",'rgb(219,219,219)'],
+				["LO (Pecqueur)","LO_1tr",'rgb(192,0,0)'],
+				["PC (Roussel)","FG_1tr",'rgb(128,0,0)'],
+				["EELV-PG-ND (Rousseau)","EELV_1tr",'rgb(127,170,3)'],
+				["PS-PRG (Saintignon)","PS_1tr",'rgb(255,128,255)']];
 				
-		var tour2=[["Union de la Gauche","UG_2tr",'rgb(255,125,192)'],
-				["Ma Vie, Ma Région, Mon Avenir","VRA_1tr",'rgb(81,192,249)'],
+		var tour2=[["Union de la Droite","UD_2tr",'rgb(0,30,255)'],
 				["Front National","FN_2tr",'rgb(2,14,64)']];
 		
 
@@ -528,7 +531,7 @@
 		
 		// objet carte
 		
-		var map = L.map('map').setView([50.56928, 3.02673], 9);
+		var map = L.map('map').setView([50.00244, 2.83997], 8);
 		
 		// fond de plan (ici MapQuest)
 		
