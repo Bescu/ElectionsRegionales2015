@@ -4,7 +4,7 @@
 		<title>Résultats Élections Régionales 2015</title>
 		<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 		<script src="http://d3js.org/topojson.v1.min.js"></script>
-		<script src="NPDCP1tr.topojson"></script>
+		<script src="NPDCP2tr.topojson"></script>
 		<script type="text/javascript" src="geostats.min.js"></script>
 		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 		<style>
@@ -19,7 +19,7 @@
         }
 		
 		#tours {
-			visibility: hidden;
+			visibility: visible;
 		}
 		
 		.legende {
@@ -137,7 +137,7 @@
 		<div class="legende" id="legende"></div>
 		<div class="tour">
 			<h1>Résultats Élections Régionales 2015</h1><br>
-			<form id="tours"><input type='radio' name='tours' value='tour1' id='tour1' checked="checked">Tour 1 <input type='radio' name='tours' value='tour2' id='tour2'>Tour 2</form>
+			<form id="tours"><input type='radio' name='tours' value='tour1' id='tour1'>Tour 1 <input type='radio' name='tours' value='tour2' id='tour2' checked="checked">Tour 2</form>
 		</div>
 		<img id="preview" src="preview.jpg"/> 
 		
@@ -154,12 +154,12 @@
 				["FN (Le Pen)","FN_1tr",'rgb(0,0,50)'],
 				["Nous citoyens (Blondel)","NC_1tr",'rgb(219,219,219)'],
 				["LO (Pecqueur)","LO_1tr",'rgb(192,0,0)'],
-				["PC (Roussel)","FG_1tr",'rgb(128,0,0)'],
+				["PC (Roussel)","PC_1tr",'rgb(128,0,0)'],
 				["EELV-PG-ND (Rousseau)","EELV_1tr",'rgb(127,170,3)'],
 				["PS-PRG (Saintignon)","PS_1tr",'rgb(255,128,255)']];
 				
-		var tour2=[["Union de la Droite","UD_2tr",'rgb(0,30,255)'],
-				["Front National","FN_2tr",'rgb(2,14,64)']];
+		var tour2=[["LR-UDI-MoDem (Bertand)","LR_2tr",'rgb(0,0,255)'],
+				["FN (Le Pen)","FN_2tr",'rgb(0,0,50)']];
 		
 
 		// Légende
